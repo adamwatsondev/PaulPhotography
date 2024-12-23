@@ -23,6 +23,8 @@ const schema = z.object({
     message: z.string().min(10, "Message must be at least 10 characters."),
   });  
 
+  type FormData = z.infer<typeof schema>;
+
 export default function Home() {
   const form = useForm({
     resolver: zodResolver(schema),
@@ -34,7 +36,7 @@ export default function Home() {
     },
   });
 
-  const onSubmit = (data) => {
+  const onSubmit = (data: FormData) => {
     emailjs
       .send(
         'service_j47mjsh',
