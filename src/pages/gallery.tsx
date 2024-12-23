@@ -19,14 +19,13 @@ export default function Gallery() {
       <div className="fixed top-0 left-0 w-full z-10 bg-white shadow-md overflow-hidden">
         <Header />
       </div>
-
-      <div className="flex flex-col items-center justify-center px-20 pb-20 gap-20 space-y-6 mt-48">
-        <div className="grid grid-cols-3 gap-8 w-full">
+      <div className="flex flex-col items-center justify-center px-10 lg:px-20 pb-20 gap-20 space-y-6 mt-48">
+      <div className="grid lg:grid-cols-3 gap-8">
           {imagesArray.map((image, index) => (
             <div key={index} className="flex flex-col gap-4">
               {/* Wrap the image in a Link component to route to the gallery item */}
               <Link to={`/gallery/${index + 1}`}>
-                <img className="w-full h-[600px]" src={image.src} alt={image.alt} />
+                <img className="w-full h-[200px] md:h-[600px]" src={image.src} alt={image.alt} />
               </Link>
               <span className="text-3xl font-old-standard text-center font-bold leading-tight text-black">
                 {image.title}

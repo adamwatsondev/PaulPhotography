@@ -67,9 +67,9 @@ export default function Home() {
       </div>
   
 {/* Main Content with Margin */}
-<div className="grid grid-cols-1 md:grid-cols-4 gap-4 items-center justify-center px-4 space-y-6 mt-40 md:mt-80">
+<div className="grid grid-cols-1 md:grid-cols-4 md:gap-4 items-center justify-center md:px-4 space-y-6 mt-60 md:mt-80">
 <div className="col-start-1 col-span-3 md:col-span-2 lg:col-start-2 lg:col-span-1 flex flex-col items-start">
-    <span className="text-black font-old-standard text-7xl max-w-xl font-bold leading-tight text-left">
+    <span className="text-black font-old-standard md:text-7xl text-3xl max-w-xl font-bold leading-tight text-left">
       Got questions?
     </span>
     <span className="text-black text-2xl font-old-standard max-w-xl font-sm leading-tight text-left">
