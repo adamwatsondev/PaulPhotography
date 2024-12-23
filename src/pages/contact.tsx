@@ -90,7 +90,7 @@ export default function Home() {
               <FormItem>
                 <FormLabel className="text-md font-old-standard">First Name</FormLabel>
                 <FormControl>
-                  <Input placeholder="First name" {...field} />
+                  <Input placeholder="..." {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -104,7 +104,7 @@ export default function Home() {
               <FormItem>
                 <FormLabel className="text-md font-old-standard">Last Name</FormLabel>
                 <FormControl>
-                  <Input placeholder="Last name" {...field} />
+                  <Input placeholder="..." {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
