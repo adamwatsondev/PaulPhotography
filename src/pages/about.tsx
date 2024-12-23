@@ -13,20 +13,20 @@ return (
       <Header />
     </div>
     
-    <div className="grid grid-cols-1 md:grid-cols-4 gap-4 items-center justify-center px-4 space-y-6 mt-40 md:mt-80">
-    <div className="col-start-1 col-span-3 md:col-span-2 lg:col-start-2 lg:col-span-1 flex flex-col items-center">
+    <div className="grid grid-cols-1 md:grid-cols-4 gap-4 items-center justify-center md:px-4 space-y-6 mt-40 md:mt-80">
+    <div className="col-start-1 col-span-3 md:col-span-2 lg:col-start-2 lg:col-span-1 flex justify-center items-center">
         <Img
-        className="rounded-none h-96 w-96 md:h-[600px] md:w-[600px] object-cover"
+        className="rounded-none w-[300px] h-[300px] md:h-[400px] lg:[600px] md:w-[400px]"
           src="..\images\person.jpeg"
           alt="Photographer" 
           width={100} height={100}
         />
         </div>
         <div className="col-start-3 lg:col-span-1 md:col-span-2 flex flex-col gap-4 items-start">
-        <span className="text-black font-old-standard text-5xl font-bold leading-tight">
+        <span className="text-black font-old-standard md:text-5xl text-2xl font-bold leading-tight">
       Hi, I'm Paul Cahill
        </span>
-      <span className="text-black font-old-standard text-2xl font-medium leading-tight">
+      <span className="text-black font-old-standard md:text-2xl text-xl font-medium leading-tight">
       From Dublin living in Brighton, the majority of my images are made locally, with emphasis on seascapes and street photography. I’ve had images published in National and local newspapers. I’ve also had some of my work highly commended,and featured in the British Life Photography Awards book, and exhibition which toured the country.
        </span>
     </div>

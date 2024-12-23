@@ -94,14 +94,14 @@ const GalleryPage = () => {
         <Header />
       </div>
 
-      <div className="md:px-20 md:mt-48 mt-24 pb-20">
-        <h1 className="text-5xl font-bold text-center font-old-standard text-black mb-8">Gallery {id}</h1>
+      <div className="flex flex-col items-center justify-center px-10 lg:px-20 pb-20 space-y-6 mt-48">
+        <span className="text-5xl font-bold text-center font-old-standard text-black mb-8">Gallery {id}</span>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid lg:grid-cols-3 gap-8">
           {gallery?.map((image: GalleryImage, index: number) => (
             <div key={index} className="flex flex-col gap-4">
               <img
-                className="w-full h-auto cursor-pointer"
+                className="w-full h-[200px] md:h-[600px] cursor-pointer"
                 src={image.src}
                 alt={image.alt}
                 onClick={() => openLightbox(index)}
