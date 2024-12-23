@@ -11,7 +11,7 @@ function App() {
     <div className="w-full h-screen p-4">
       <Router>
         <Routes>
-          <Route path="/home" element={<Home />} />
+          <Route path="" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/gallery/:id" element={<GalleryPage />} /> {/* Add dynamic gallery route */}

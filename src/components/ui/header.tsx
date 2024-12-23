@@ -43,7 +43,7 @@ export default function Header() {
 
       {/* Navigation Menu (desktop) */}
       <nav className="sm:flex items-center space-x-16 hidden">
-        <a href="/home" className="text-black hover:underline hover:underline-offset-4 font-old-standard font-bold hover:text-gray-400 text-2xl">
+        <a href="/" className="text-black hover:underline hover:underline-offset-4 font-old-standard font-bold hover:text-gray-400 text-2xl">
           Home
         </a>
         <a href="/about" className="text-black font-old-standard hover:underline hover:underline-offset-4 font-bold hover:text-gray-400 text-2xl">
