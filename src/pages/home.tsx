@@ -2,19 +2,35 @@ import Footer from "@/components/ui/footer";
 import Header from "@/components/ui/header";
 import { Img } from "react-image";
 import { useEffect } from "react";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+} from "@/components/ui/carousel"
+import Autoplay from "embla-carousel-autoplay"
+
+export function Example() {
+  return (
+    <Carousel
+      plugins={[
+        Autoplay({
+          delay: 2000,
+        }),
+      ]}
+    >
+      // ...
+    </Carousel>
+  )
+}
+
 
 export default function Home() {
 
-  
-  // const [selectedImage, setSelectedImage] = useState(null);
-  // const openFullscreen = (imageUrl) => {
-  //     setSelectedImage(imageUrl);
-  //   };
-
-  //   const closeFullscreen = () => {
-  //     setSelectedImage(null);
-  //   };
-
+  const images = [
+    "..\\images\\brighton1.jpg",
+    "..\\images\\brighton2.jpg",
+    "..\\images\\brighton3.jpg",
+  ];
 
   useEffect(() => {
     // Dynamically load the Instagram embed script
@@ -29,22 +45,32 @@ export default function Home() {
     };
   }, []);
 
-
 return (
   <div className="flex flex-col gap-8 md:gap-20 pb-20">
       <div className="fixed top-0 left-0 w-full z-10 bg-white shadow-md overflow-hidden">
       <Header />
     </div>
-    <div className="relative flex items-center justify-center px-20 space-y-6 mt-48">
-  {/* Main Image */}
-  <Img className="h-[1300px] w-full" src="..\images\brighton1.jpg" />
+    
+    <div className="flex flex-col items-center justify-center px-20 space-y-6 mt-48">
+    <Carousel
+      plugins={[
+        Autoplay({
+          delay: 4000,
+        }),
+      ]}
+      className="w-full mx-auto"
+    >
+      <CarouselContent>
+        {images.map((imageSrc, index) => (
+          <CarouselItem key={index} className="h-[1300px] w-full">
+            <div className="p-1">
+              <Img className="h-[1300px] w-full" src={imageSrc} alt={`Image ${index + 1}`} />
+            </div>
+          </CarouselItem>
+        ))}
+      </CarouselContent>
+    </Carousel>
 
-  {/* Logo Image */}
-  {/* <div className="absolute inset-0 flex items-center justify-center">
-    <Img className="h-96 w-96" src="..\images\logo-white.png" />
-  </div> */}
-
-  {/* Text */}
   <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white">
     <span className="text-9xl">Paul Cahill</span>
     <span className="text-3xl">Brighton based photographer</span>
@@ -52,7 +78,7 @@ return (
 </div>
 
 {/* Instagram Feed */}
-<span className="text-3xl px-20 font-bold leading-tight text-gray-900">
+<span className="text-3xl px-20 text-center font-bold leading-tight text-gray-900">
   Latest Instagram Posts
 </span>
       <div className="flex w-full justify-between gap-8">
@@ -104,42 +130,12 @@ return (
       </div>
       </div>
 {/* Instagram Feed */}
-  
-
 
           <div className="fixed bottom-0 w-full">
                     <Footer />
                     </div>
 
-      {/* Fullscreen Modal */}
-      {/* {selectedImage && (
-        <div
-          style={{
-            position: 'fixed',
-            top: '0',
-            left: '0',
-            width: '100%',
-            height: '100%',
-            backgroundColor: 'rgba(0, 0, 0, 0.8)',
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            zIndex: '9999',
-          }}
-          onClick={closeFullscreen}
-        >
-          <img
-            src={selectedImage}
-            alt="Fullscreen"
-            style={{
-              maxWidth: '90%',
-              maxHeight: '90%',
-              objectFit: 'contain',
-              borderRadius: '8px',
-            }}
-          />
-        </div>
-      )} */}
+
           </div>
 )
 
