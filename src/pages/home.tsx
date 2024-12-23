@@ -32,6 +32,12 @@ export default function Home() {
     "..\\images\\brighton3.jpg",
   ];
 
+  const imagesArray = [
+    { src: "https://1drv.ms/i/s!Aq0_P5Zt_OP0bQBtxkFLMZFDTGQ?embed=1&width=3000&height=2256", alt: "Brighton Pier", title: "Gallery 1" },
+    { src: "https://1drv.ms/i/s!Aq0_P5Zt_OP0biW2lQw8rKSqEz0?embed=1&width=4271&height=2834", alt: "Brighton Beach", title: "Gallery 2" },
+    { src: "https://1drv.ms/i/s!Aq0_P5Zt_OP0bw3_MuebDvRG42g?embed=1&width=2000&height=1334", alt: "Brighton Marina", title: "Gallery 3" }
+  ];
+
   useEffect(() => {
     // Dynamically load the Instagram embed script
     const script = document.createElement("script");
@@ -51,7 +57,10 @@ return (
       <Header />
     </div>
     
-    <div className="flex flex-col items-center justify-center px-20 space-y-6 mt-48">
+    <div className="flex flex-col items-center justify-center px-20 gap-20 space-y-6 mt-48">
+
+      {/* Carousel */}
+    <div>
     <Carousel
       plugins={[
         Autoplay({
@@ -71,14 +80,15 @@ return (
       </CarouselContent>
     </Carousel>
 
-  <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white">
-    <span className="text-9xl font-old-standard">Paul Cahill</span>
-    <span className="text-3xl font-old-standard">Brighton Based Photographer</span>
+<div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white">
+  <span className="text-9xl font-old-standard text-shadow">Paul Cahill</span>
+  <span className="text-3xl font-old-standard text-shadow">Brighton Based Photographer</span>
 </div>
 </div>
+{/* Carousel */}
 
 {/* Instagram Feed */}
-<span className="text-3xl px-20 font-old-standard text-center font-bold leading-tight text-black">
+<span className="text-6xl px-20 font-old-standard text-center font-bold leading-tight text-black">
   Latest Instagram Posts
 </span>
       <div className="flex w-full justify-between gap-8">
@@ -130,6 +140,25 @@ return (
       </div>
       </div>
 {/* Instagram Feed */}
+
+{/* Latest Galleries */}
+<span className="text-6xl px-20 font-old-standard text-center font-bold leading-tight text-black">
+  Latest Galleries
+</span>
+<div className="flex gap-8 justify-between items-start w-full">
+  {imagesArray.map((image, index) => (
+    <div key={index} className="flex flex-col gap-4">
+      <img className="w-[800px] h-[600px]" src={image.src} alt={image.alt} />
+      <span className="text-3xl font-old-standard text-center font-bold leading-tight text-black">
+        {image.title}
+      </span>
+    </div>
+  ))}
+</div>
+{/* Latest Galleries */}
+
+</div>
+
 
           <div className="fixed bottom-0 w-full">
                     <Footer />
