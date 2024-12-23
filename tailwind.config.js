@@ -9,6 +9,10 @@ module.exports = {
   			md: 'calc(var(--radius) - 2px)',
   			sm: 'calc(var(--radius) - 4px)'
   		},
+	      fontFamily: {
+			'old-standard': ['"Old Standard TT"', 'serif'],
+			'montserrat': ['Montserrat', 'sans-serif'],
+		  },
   		colors: {}
   	}
   },

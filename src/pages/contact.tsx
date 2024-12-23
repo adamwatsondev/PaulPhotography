@@ -67,10 +67,10 @@ export default function Home() {
 {/* Main Content with Margin */}
 <div className="grid grid-cols-1 md:grid-cols-4 gap-4 items-center justify-center px-4 space-y-6 mt-40 md:mt-80">
 <div className="col-start-1 col-span-3 md:col-span-2 lg:col-start-2 lg:col-span-1 flex flex-col items-start">
-    <span className="text-black text-3xl max-w-xl font-bold leading-tight text-left">
+    <span className="text-black font-old-standard text-7xl max-w-xl font-bold leading-tight text-left">
       Got questions?
     </span>
-    <span className="text-black text-xl max-w-xl font-sm leading-tight text-left">
+    <span className="text-black text-2xl font-old-standard max-w-xl font-sm leading-tight text-left">
       Contact me and let's have a chat.
     </span>
   </div>
@@ -86,7 +86,7 @@ export default function Home() {
             name="name"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>First Name</FormLabel>
+                <FormLabel className="text-md font-old-standard">First Name</FormLabel>
                 <FormControl>
                   <Input placeholder="First name" {...field} />
                 </FormControl>
@@ -100,7 +100,7 @@ export default function Home() {
             name="surname"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Last Name</FormLabel>
+                <FormLabel className="text-md font-old-standard">Last Name</FormLabel>
                 <FormControl>
                   <Input placeholder="Last name" {...field} />
                 </FormControl>
@@ -115,7 +115,7 @@ export default function Home() {
             name="email"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Email</FormLabel>
+                <FormLabel className="text-md font-old-standard">Email</FormLabel>
                 <FormControl>
                   <Input placeholder="..." {...field} />
                 </FormControl>
@@ -128,7 +128,7 @@ export default function Home() {
             name="message"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Message</FormLabel>
+                <FormLabel className="text-md font-old-standard">Message</FormLabel>
                 <FormControl>
                   <Textarea className="h-40" placeholder="..." {...field} />
                 </FormControl>
@@ -137,7 +137,11 @@ export default function Home() {
             )}
           />
           <CardFooter className="flex justify-end">
-            <Button type="submit">Submit</Button>
+            <Button type="submit">
+              <span className="font-old-standard text-md font-semibold">
+              Submit
+              </span>
+              </Button>
           </CardFooter>
         </form>
       </Form>
