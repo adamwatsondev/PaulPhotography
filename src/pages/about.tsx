@@ -23,10 +23,10 @@ return (
         />
         </div>
         <div className="col-start-3 lg:col-span-1 md:col-span-2 flex flex-col gap-4 items-start">
-        <span className="text-gray-900 text-3xl font-bold leading-tight">
+        <span className="text-black font-old-standard text-5xl font-bold leading-tight">
       Hi, I'm Paul Cahill
        </span>
-      <span className="text-gray-900 text-xl font-medium leading-tight">
+      <span className="text-black font-old-standard text-2xl font-medium leading-tight">
       From Dublin living in Brighton, the majority of my images are made locally, with emphasis on seascapes and street photography. I’ve had images published in National and local newspapers. I’ve also had some of my work highly commended,and featured in the British Life Photography Awards book, and exhibition which toured the country.
        </span>
     </div>
@@ -36,7 +36,7 @@ return (
     <div className="flex justify-center">
         <Link to="/contact">
         <Button className="text-white h-12 w-40 font-bold py-2 px-4 rounded-sm">
-            <span className="text-white text-lg font-md">
+        <span className="font-old-standard text-xl font-semibold">
             Get in touch
             </span>
         </Button>

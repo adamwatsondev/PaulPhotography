@@ -5,12 +5,12 @@ export default function Footer() {
   return (
     <>
       <div className="flex w-full justify-between px-4 sm:px-16 h-20 items-center bg-white shadow-md">
-       <div className="flex items-center gap-4">
+       <div className="flex items-center gap-4 justify-center">
 
         <Link to="https://www.instagram.com/cahill_paul/?hl=en" className="text-black bg-white focus:outline-none"> 
           <Img className="h-8 w-8" src="../images/instagram-icon.png" alt="Instagram" />
         </Link>
-        <span className="text-gray-900 text-md">
+        <span className="text-black text-lg font-old-standard">
           Copyright Paul Cahill
           </span>
         </div>

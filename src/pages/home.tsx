@@ -72,13 +72,13 @@ return (
     </Carousel>
 
   <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white">
-    <span className="text-9xl">Paul Cahill</span>
-    <span className="text-3xl">Brighton based photographer</span>
+    <span className="text-9xl font-old-standard">Paul Cahill</span>
+    <span className="text-3xl font-old-standard">Brighton Based Photographer</span>
 </div>
 </div>
 
 {/* Instagram Feed */}
-<span className="text-3xl px-20 text-center font-bold leading-tight text-gray-900">
+<span className="text-3xl px-20 font-old-standard text-center font-bold leading-tight text-black">
   Latest Instagram Posts
 </span>
       <div className="flex w-full justify-between gap-8">
