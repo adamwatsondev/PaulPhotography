@@ -1,6 +1,6 @@
 import Footer from "@/components/ui/footer";
 import Header from "@/components/ui/header";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/nav-button";
 import { Img } from "react-image"
 import { Link } from "react-router-dom";
 
