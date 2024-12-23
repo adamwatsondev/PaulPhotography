@@ -8,6 +8,8 @@ import {
   CarouselItem,
 } from "@/components/ui/carousel"
 import Autoplay from "embla-carousel-autoplay"
+import { Link } from 'react-router-dom';
+
 
 export function Example() {
   return (
@@ -143,18 +145,23 @@ return (
 
 {/* Latest Galleries */}
 <span className="text-6xl px-20 font-old-standard text-center font-bold leading-tight text-black">
-  Latest Galleries
+  Featured Galleries
 </span>
-<div className="flex gap-8 justify-between items-start w-full">
-  {imagesArray.map((image, index) => (
-    <div key={index} className="flex flex-col gap-4">
-      <img className="w-[800px] h-[600px]" src={image.src} alt={image.alt} />
-      <span className="text-3xl font-old-standard text-center font-bold leading-tight text-black">
-        {image.title}
-      </span>
-    </div>
-  ))}
-</div>
+<div className="flex flex-col items-center justify-center px-20 pb-20 gap-20 space-y-6 mt-48">
+        <div className="grid grid-cols-3 gap-8 w-full">
+          {imagesArray.map((image, index) => (
+            <div key={index} className="flex flex-col gap-4">
+              {/* Wrap the image in a Link component to route to the gallery item */}
+              <Link to={`/gallery/${index + 1}`}>
+                <img className="w-full h-[600px]" src={image.src} alt={image.alt} />
+              </Link>
+              <span className="text-3xl font-old-standard text-center font-bold leading-tight text-black">
+                {image.title}
+              </span>
+            </div>
+          ))}
+        </div>
+      </div>
 {/* Latest Galleries */}
 
 </div>
