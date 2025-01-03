@@ -79,16 +79,16 @@ export default function Header() {
         } mt-2 w-full bg-white shadow-md`}
       >
         <nav className="flex flex-col items-start space-y-4 px-4 py-2">
-          <a href="/" className="text-black hover:text-gray-400">
+          <a href="/" className="text-black font-old-standard hover:underline hover:underline-offset-4 font-bold hover:text-gray-400">
             Home
           </a>
-          <a href="/about" className="text-black hover:text-gray-400">
+          <a href="/about" className="text-black font-old-standard hover:underline hover:underline-offset-4 font-bold hover:text-gray-400">
             About
           </a>
-          <a href="/gallery" className="text-black hover:text-gray-400">
+          <a href="/gallery" className="text-black font-old-standard hover:underline hover:underline-offset-4 font-bold hover:text-gray-400">
             Gallery
           </a>
-          <a href="/contact" className="text-black hover:text-gray-400">
+          <a href="/contact" className="text-black font-old-standard hover:underline hover:underline-offset-4 font-bold hover:text-gray-400">
             Contact
           </a>
           {/* <a href="/basket" className="size-icon">

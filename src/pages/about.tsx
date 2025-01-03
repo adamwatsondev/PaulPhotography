@@ -17,7 +17,7 @@ return (
     <div className="col-start-1 col-span-3 md:col-span-2 lg:col-start-2 lg:col-span-1 flex justify-center items-center">
         <Img
         className="rounded-none w-[300px] h-[300px] md:h-[400px] lg:[600px] md:w-[400px]"
-          src="..\images\person.jpeg"
+          src="..\images\profile-photo.jpg"
           alt="Photographer" 
           width={100} height={100}
         />

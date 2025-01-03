@@ -58,9 +58,9 @@ return (
       <Header />
     </div>
     
-    <div className="grid grid-cols-4 items-center justify-center md:px-20 gap-20 space-y-6 mt-48">
+    <div className="flex flex-col items-center justify-center px-20 gap-20 space-y-6 mt-48">
       {/* Carousel */}
-    <div className="col-start-1 col-span-4">
+    <div>
     <Carousel
       plugins={[
         Autoplay({
@@ -72,25 +72,26 @@ return (
       <CarouselContent>
         {images.map((imageSrc, index) => (
           <CarouselItem key={index} className="h-[1300px] w-full">
-              <Img className="md:h-[1300px] h-[300px] w-full" src={imageSrc} alt={`Image ${index + 1}`} />
+            <div className="p-1">
+              <Img className="h-[1300px] w-full" src={imageSrc} alt={`Image ${index + 1}`} />
+            </div>
           </CarouselItem>
         ))}
       </CarouselContent>
     </Carousel>
 
-<div className="absolute inset-0 flex flex-col items-center pt-80 md:justify-center text-center text-white">
-  <span className="md:text-9xl text-5xl font-old-standard text-shadow">Paul Cahill</span>
-  <span className="md:text-3xl text-2xl font-old-standard text-shadow">Brighton Based Photographer</span>
+<div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white">
+  <span className="text-9xl font-old-standard text-shadow">Paul Cahill</span>
+  <span className="text-3xl font-old-standard text-shadow">Brighton Based Photographer</span>
 </div>
 </div>
 {/* Carousel */}
 
 {/* Instagram Feed */}
-<div className="col-start-1 col-span-4">
 <span className="text-6xl px-20 font-old-standard text-center font-bold leading-tight text-black">
   Latest Instagram Posts
 </span>
-      <div className="flex flex-col w-full justify-between gap-8">
+      <div className="flex w-full justify-between gap-8">
       <div
         className="flex w-full justify-center"
         dangerouslySetInnerHTML={{
@@ -138,7 +139,6 @@ return (
       >
       </div>
       </div>
-      </div>
 {/* Instagram Feed */}
 
 {/* Latest Galleries */}
@@ -173,4 +173,4 @@ return (
           </div>
 )
 
-}
+} 
