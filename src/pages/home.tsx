@@ -28,9 +28,9 @@ export function Example() {
 export default function Home() {
 
   const images = [
-    "..\\images\\brighton1.jpg",
-    "..\\images\\brighton2.jpg",
-    "..\\images\\brighton3.jpg",
+    "..\\images\\brighton\\4.jpg",
+    "..\\images\\brighton\\12.jpg",
+    "..\\images\\brighton\\18.jpg",
   ];
 
   const imagesArray = [
@@ -58,7 +58,7 @@ return (
       <Header />
     </div>
     
-    <div className="flex flex-col items-center justify-center px-20 gap-20 space-y-6 mt-48">
+    <div className="flex flex-col items-center justify-center px-20 gap-20 space-y-6 mt-32">
       {/* Carousel */}
     <div>
     <Carousel
@@ -145,7 +145,7 @@ return (
 <span className="text-6xl px-20 font-old-standard text-center font-bold leading-tight text-black">
   Featured Galleries
 </span>
-<div className="flex flex-col items-center justify-center px-20 pb-20 gap-20 space-y-6 mt-48">
+<div className="flex flex-col items-center justify-center px-20 pb-20 gap-20 space-y-6 mt-32">
         <div className="grid grid-cols-3 gap-8 w-full">
           {imagesArray.map((image, index) => (
             <div key={index} className="flex flex-col gap-4">

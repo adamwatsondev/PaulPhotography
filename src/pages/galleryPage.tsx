@@ -94,7 +94,7 @@ const GalleryPage = () => {
         <Header />
       </div>
 
-      <div className="flex flex-col items-center justify-center px-10 lg:px-20 pb-20 space-y-6 mt-48">
+      <div className="flex flex-col items-center justify-center px-10 lg:px-20 pb-20 space-y-6 mt-32">
         <span className="text-5xl font-bold text-center font-old-standard text-black mb-8">Gallery {id}</span>
 
         <div className="grid lg:grid-cols-3 gap-8">

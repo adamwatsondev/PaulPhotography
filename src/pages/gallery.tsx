@@ -19,7 +19,7 @@ export default function Gallery() {
       <div className="fixed top-0 left-0 w-full z-10 bg-white shadow-md overflow-hidden">
         <Header />
       </div>
-      <div className="flex flex-col items-center justify-center px-10 lg:px-20 pb-20 gap-20 space-y-6 mt-48">
+      <div className="flex flex-col items-center justify-center px-10 lg:px-20 pb-20 gap-20 space-y-6 mt-32">
       <div className="grid lg:grid-cols-3 gap-8">
           {imagesArray.map((image, index) => (
             <div key={index} className="flex flex-col gap-4">

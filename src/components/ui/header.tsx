@@ -11,7 +11,7 @@ export default function Header() {
   };
 
   return (
-    <div className="flex w-full justify-between px-4 sm:px-24 h-40 items-center bg-white shadow-md">
+    <div className="flex w-full justify-between px-4 sm:px-24 h-28 items-center bg-white shadow-md">
       {/* Logo and Title */}
       <Link to="/" className="hidden sm:block items-center space-x-4">
         <Img src="../images/logo.png" alt="Logo" width={250} height={250} />
