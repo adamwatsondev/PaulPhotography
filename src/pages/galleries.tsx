@@ -41,22 +41,24 @@ export default function Galleries() {
       <div className="fixed top-0 left-0 w-full z-10 bg-white shadow-md overflow-hidden">
         <Header />
       </div>
-      <div className="flex flex-col items-center justify-center px-10 lg:px-20 pb-20 mt-32">
+      <div className="flex flex-col px-4 md:px-10 lg:px-20 pb-20 mt-32">
         <span className="text-5xl font-bold text-center font-old-standard text-black mb-8">
           Galleries
         </span>
 
-        <div className="grid lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 xl:grid-cols-2 2xl:grid-cols-3 gap-8">
           {imagesArray.map((image, index) => (
-            <div key={index} className="flex flex-col gap-4">
-              {/* Wrap the image in a Link component to route to the gallery item */}
+            <div
+              key={index}
+              className="flex flex-col gap-4 justify-center items-center"
+            >
               <Link
                 to={`/galleries/${image.title
                   .replace(/\s+/g, "-")
                   .toLowerCase()}`}
               >
                 <img
-                  className="w-full h-[200px] md:h-[500px]"
+                  className="lg:h-[500px] h-auto w-full cursor-pointer"
                   src={image.src}
                   alt={image.alt}
                 />

@@ -26,7 +26,7 @@ const GalleryPage = () => {
 
   // Use keys with hyphens to match URL patterns
   const galleryData: GalleryData = {
-    brighton: galleryGeneration("brighton", 20),
+    brighton: galleryGeneration("Brighton", 20),
     protest: galleryGeneration("Protest", 20),
     grayscale: galleryGeneration("Grayscale", 20),
     "brighton-beach": galleryGeneration("Brighton Beach", 15),
@@ -70,23 +70,27 @@ const GalleryPage = () => {
         <Header />
       </div>
 
-      <div className="flex flex-col items-center justify-center px-10 lg:px-20 pb-20 mt-32">
+      <div className="flex flex-col px-4 md:px-10 lg:px-20 pb-20 mt-32">
         <span className="text-5xl capitalize font-bold text-center font-old-standard text-black mb-8">
           {name?.replace(/-/g, " ")}{" "}
           {/* Replace hyphens with spaces for display */}
         </span>
 
-        <div className="grid lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 xl:grid-cols-2 2xl:grid-cols-3 gap-8">
           {gallery?.map((image: GalleryImage, index: number) => (
-            <div key={index} className="flex flex-col gap-4">
+            <div key={index} className="flex justify-center items-center">
               <img
-                className="w-full h-[200px] md:h-[500px] cursor-pointer"
+                className="lg:h-[500px] h-auto w-full cursor-pointer"
                 src={image.src}
                 alt={image.alt}
                 onClick={() => openLightbox(index)}
               />
             </div>
-          )) || <p className="text-center text-gray-600">Gallery not found.</p>}
+          )) || (
+            <span className="text-center text-gray-600">
+              Gallery not found.
+            </span>
+          )}
         </div>
       </div>
 
