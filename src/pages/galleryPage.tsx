@@ -26,7 +26,7 @@ const GalleryPage = () => {
 
   // Use keys with hyphens to match URL patterns
   const galleryData: GalleryData = {
-    brighton: galleryGeneration("Brighton", 20),
+    brighton: galleryGeneration("brighton", 20),
     protest: galleryGeneration("Protest", 20),
     grayscale: galleryGeneration("Grayscale", 20),
     "brighton-beach": galleryGeneration("Brighton Beach", 15),
