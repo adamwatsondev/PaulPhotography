@@ -34,9 +34,17 @@ export default function Home() {
   ];
 
   const imagesArray = [
-    { src: "https://1drv.ms/i/s!Aq0_P5Zt_OP0bQBtxkFLMZFDTGQ?embed=1&width=3000&height=2256", alt: "Brighton Pier", title: "Gallery 1" },
-    { src: "https://1drv.ms/i/s!Aq0_P5Zt_OP0biW2lQw8rKSqEz0?embed=1&width=4271&height=2834", alt: "Brighton Beach", title: "Gallery 2" },
-    { src: "https://1drv.ms/i/s!Aq0_P5Zt_OP0bw3_MuebDvRG42g?embed=1&width=2000&height=1334", alt: "Brighton Marina", title: "Gallery 3" }
+    {
+      src: "..\\images\\brighton\\1.jpg", title: "Brighton", alt: "Brighton"
+      
+    },
+    {
+      src: "..\\images\\Protest\\1.jpg", title: "Protest", alt: "Protest"
+    },
+    {
+      src: "..\\images\\Grayscale\\1.jpg", title: "Grayscale", alt: "Grayscale"
+      
+    }
   ];
 
   useEffect(() => {
@@ -141,17 +149,17 @@ return (
       </div>
 {/* Instagram Feed */}
 
-{/* Latest Galleries */}
+{/* Featured Galleries */}
 <span className="text-6xl px-20 font-old-standard text-center font-bold leading-tight text-black">
   Featured Galleries
 </span>
 <div className="flex flex-col items-center justify-center px-20 pb-20 gap-20 space-y-6 mt-32">
         <div className="grid grid-cols-3 gap-8 w-full">
-          {imagesArray.map((image, index) => (
+        {imagesArray.map((image, index) => (
             <div key={index} className="flex flex-col gap-4">
               {/* Wrap the image in a Link component to route to the gallery item */}
-              <Link to={`/gallery/${index + 1}`}>
-                <img className="w-full h-[600px]" src={image.src} alt={image.alt} />
+              <Link to={`/galleries/${image.title.replace(/\s+/g, "-").toLowerCase()}`}>
+                <img className="w-full h-[200px] md:h-[500px]" src={image.src} alt={image.alt} />
               </Link>
               <span className="text-3xl font-old-standard text-center font-bold leading-tight text-black">
                 {image.title}
@@ -160,7 +168,7 @@ return (
           ))}
         </div>
       </div>
-{/* Latest Galleries */}
+{/* Featured Galleries */}
 
 </div>
 
