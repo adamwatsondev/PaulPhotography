@@ -56,10 +56,10 @@ export default function Header() {
           About
         </a>
         <a
-          href="/gallery"
+          href="/galleries"
           className="text-black font-old-standard hover:underline hover:underline-offset-4 font-bold hover:text-gray-400 text-2xl"
         >
-          Gallery
+          Galleries
         </a>
         <a
           href="/contact"
@@ -85,8 +85,8 @@ export default function Header() {
           <a href="/about" className="text-black font-old-standard hover:underline hover:underline-offset-4 font-bold hover:text-gray-400">
             About
           </a>
-          <a href="/gallery" className="text-black font-old-standard hover:underline hover:underline-offset-4 font-bold hover:text-gray-400">
-            Gallery
+          <a href="/galleries" className="text-black font-old-standard hover:underline hover:underline-offset-4 font-bold hover:text-gray-400">
+            Galleries
           </a>
           <a href="/contact" className="text-black font-old-standard hover:underline hover:underline-offset-4 font-bold hover:text-gray-400">
             Contact

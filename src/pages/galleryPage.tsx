@@ -10,62 +10,36 @@ type GalleryImage = {
   title: string;
 };
 
-type GalleryData = Record<number, GalleryImage[]>;
+type GalleryData = Record<string, GalleryImage[]>;
 
 const GalleryPage = () => {
-  const { id } = useParams<{ id: string }>(); // Ensure id is a string
+  const { name } = useParams<{ name: string }>();
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [lightboxOpen, setLightboxOpen] = useState(false);
 
+  const galleryGeneration = (folder: string, count: number): GalleryImage[] =>
+    Array.from({ length: count }, (_, i) => ({
+      src: `/images/${folder}/${i + 1}.jpg`,
+      alt: `Image ${i + 1}`,
+      title: `Image ${i + 1}`,
+    }));
+
+  // Use keys with hyphens to match URL patterns
   const galleryData: GalleryData = {
-    1: [
-      { src: "https://1drv.ms/i/s!Aq0_P5Zt_OP0bQBtxkFLMZFDTGQ?embed=1&width=3000&height=2256", alt: "Brighton Pier", title: "Image 1" },
-      { src: "https://1drv.ms/i/s!Aq0_P5Zt_OP0bQBtxkFLMZFDTGQ?embed=1&width=3000&height=2256", alt: "Brighton Pier", title: "Image 1" },
-      { src: "https://1drv.ms/i/s!Aq0_P5Zt_OP0bQBtxkFLMZFDTGQ?embed=1&width=3000&height=2256", alt: "Brighton Pier", title: "Image 1" },
-      { src: "https://1drv.ms/i/s!Aq0_P5Zt_OP0bQBtxkFLMZFDTGQ?embed=1&width=3000&height=2256", alt: "Brighton Pier", title: "Image 1" },
-      { src: "https://1drv.ms/i/s!Aq0_P5Zt_OP0bQBtxkFLMZFDTGQ?embed=1&width=3000&height=2256", alt: "Brighton Pier", title: "Image 1" },
-      { src: "https://1drv.ms/i/s!Aq0_P5Zt_OP0bQBtxkFLMZFDTGQ?embed=1&width=3000&height=2256", alt: "Brighton Pier", title: "Image 1" },
-      { src: "https://1drv.ms/i/s!Aq0_P5Zt_OP0bQBtxkFLMZFDTGQ?embed=1&width=3000&height=2256", alt: "Brighton Pier", title: "Image 1" },
-      { src: "https://1drv.ms/i/s!Aq0_P5Zt_OP0bQBtxkFLMZFDTGQ?embed=1&width=3000&height=2256", alt: "Brighton Pier", title: "Image 1" },
-      { src: "https://1drv.ms/i/s!Aq0_P5Zt_OP0bQBtxkFLMZFDTGQ?embed=1&width=3000&height=2256", alt: "Brighton Pier", title: "Image 1" },
-      { src: "https://1drv.ms/i/s!Aq0_P5Zt_OP0bQBtxkFLMZFDTGQ?embed=1&width=3000&height=2256", alt: "Brighton Pier", title: "Image 1" },
-      { src: "https://1drv.ms/i/s!Aq0_P5Zt_OP0bQBtxkFLMZFDTGQ?embed=1&width=3000&height=2256", alt: "Brighton Pier", title: "Image 1" },
-      { src: "https://1drv.ms/i/s!Aq0_P5Zt_OP0bQBtxkFLMZFDTGQ?embed=1&width=3000&height=2256", alt: "Brighton Pier", title: "Image 1" }
-    ],
-    2: [
-      { src: "https://1drv.ms/i/s!Aq0_P5Zt_OP0biW2lQw8rKSqEz0?embed=1&width=4271&height=2834", alt: "Brighton Beach", title: "Image 2" },
-      { src: "https://1drv.ms/i/s!Aq0_P5Zt_OP0biW2lQw8rKSqEz0?embed=1&width=4271&height=2834", alt: "Brighton Beach", title: "Image 2" },
-      { src: "https://1drv.ms/i/s!Aq0_P5Zt_OP0biW2lQw8rKSqEz0?embed=1&width=4271&height=2834", alt: "Brighton Beach", title: "Image 2" },
-      { src: "https://1drv.ms/i/s!Aq0_P5Zt_OP0biW2lQw8rKSqEz0?embed=1&width=4271&height=2834", alt: "Brighton Beach", title: "Image 2" },
-      { src: "https://1drv.ms/i/s!Aq0_P5Zt_OP0biW2lQw8rKSqEz0?embed=1&width=4271&height=2834", alt: "Brighton Beach", title: "Image 2" },
-      { src: "https://1drv.ms/i/s!Aq0_P5Zt_OP0biW2lQw8rKSqEz0?embed=1&width=4271&height=2834", alt: "Brighton Beach", title: "Image 2" },
-      { src: "https://1drv.ms/i/s!Aq0_P5Zt_OP0biW2lQw8rKSqEz0?embed=1&width=4271&height=2834", alt: "Brighton Beach", title: "Image 2" },
-      { src: "https://1drv.ms/i/s!Aq0_P5Zt_OP0biW2lQw8rKSqEz0?embed=1&width=4271&height=2834", alt: "Brighton Beach", title: "Image 2" },
-      { src: "https://1drv.ms/i/s!Aq0_P5Zt_OP0biW2lQw8rKSqEz0?embed=1&width=4271&height=2834", alt: "Brighton Beach", title: "Image 2" },
-      { src: "https://1drv.ms/i/s!Aq0_P5Zt_OP0biW2lQw8rKSqEz0?embed=1&width=4271&height=2834", alt: "Brighton Beach", title: "Image 2" }
-    ],
-    3: [
-      { src: "https://1drv.ms/i/s!Aq0_P5Zt_OP0bw3_MuebDvRG42g?embed=1&width=2000&height=1334", alt: "Brighton Marina", title: "Image 3" },
-      { src: "https://1drv.ms/i/s!Aq0_P5Zt_OP0bw3_MuebDvRG42g?embed=1&width=2000&height=1334", alt: "Brighton Marina", title: "Image 3" },
-      { src: "https://1drv.ms/i/s!Aq0_P5Zt_OP0bw3_MuebDvRG42g?embed=1&width=2000&height=1334", alt: "Brighton Marina", title: "Image 3" },
-      { src: "https://1drv.ms/i/s!Aq0_P5Zt_OP0bw3_MuebDvRG42g?embed=1&width=2000&height=1334", alt: "Brighton Marina", title: "Image 3" },
-      { src: "https://1drv.ms/i/s!Aq0_P5Zt_OP0bw3_MuebDvRG42g?embed=1&width=2000&height=1334", alt: "Brighton Marina", title: "Image 3" },
-      { src: "https://1drv.ms/i/s!Aq0_P5Zt_OP0bw3_MuebDvRG42g?embed=1&width=2000&height=1334", alt: "Brighton Marina", title: "Image 3" },
-      { src: "https://1drv.ms/i/s!Aq0_P5Zt_OP0bw3_MuebDvRG42g?embed=1&width=2000&height=1334", alt: "Brighton Marina", title: "Image 3" },
-      { src: "https://1drv.ms/i/s!Aq0_P5Zt_OP0bw3_MuebDvRG42g?embed=1&width=2000&height=1334", alt: "Brighton Marina", title: "Image 3" },
-      { src: "https://1drv.ms/i/s!Aq0_P5Zt_OP0bw3_MuebDvRG42g?embed=1&width=2000&height=1334", alt: "Brighton Marina", title: "Image 3" },
-      { src: "https://1drv.ms/i/s!Aq0_P5Zt_OP0bw3_MuebDvRG42g?embed=1&width=2000&height=1334", alt: "Brighton Marina", title: "Image 3" },
-      { src: "https://1drv.ms/i/s!Aq0_P5Zt_OP0bw3_MuebDvRG42g?embed=1&width=2000&height=1334", alt: "Brighton Marina", title: "Image 3" },
-      { src: "https://1drv.ms/i/s!Aq0_P5Zt_OP0bw3_MuebDvRG42g?embed=1&width=2000&height=1334", alt: "Brighton Marina", title: "Image 3" }
-    ],
+    brighton: galleryGeneration("brighton", 20),
+    protest: galleryGeneration("Protest", 20),
+    grayscale: galleryGeneration("Grayscale", 20),
+    "brighton-beach": galleryGeneration("Brighton Beach", 15),
+    pride: galleryGeneration("Pride", 20),
+    birds: galleryGeneration("Birds", 16),
   };
 
-  const numericId = id ? parseInt(id, 10) : undefined; // Convert id to a number
-  const gallery = numericId ? galleryData[numericId] : undefined;
+  // The key matches the URL parameter directly
+  const gallery = name ? galleryData[name.toLowerCase()] : undefined;
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
-  }, [id]);
+  }, [name]);
 
   const openLightbox = (index: number) => {
     setCurrentImageIndex(index);
@@ -94,25 +68,25 @@ const GalleryPage = () => {
         <Header />
       </div>
 
-      <div className="flex flex-col items-center justify-center px-10 lg:px-20 pb-20 space-y-6 mt-32">
-        <span className="text-5xl font-bold text-center font-old-standard text-black mb-8">Gallery {id}</span>
+      <div className="flex flex-col items-center justify-center px-10 lg:px-20 pb-20 mt-32">
+        <span className="text-5xl capitalize font-bold text-center font-old-standard text-black mb-8">
+          {name?.replace(/-/g, " ")} {/* Replace hyphens with spaces for display */}
+        </span>
 
         <div className="grid lg:grid-cols-3 gap-8">
           {gallery?.map((image: GalleryImage, index: number) => (
             <div key={index} className="flex flex-col gap-4">
               <img
-                className="w-full h-[200px] md:h-[600px] cursor-pointer"
+                className="w-full h-[200px] md:h-[500px] cursor-pointer"
                 src={image.src}
                 alt={image.alt}
                 onClick={() => openLightbox(index)}
               />
-              <span className="text-2xl font-semibold font-old-standard text-black text-center">{image.title}</span>
             </div>
-          ))}
+          )) || <p className="text-center text-gray-600">Gallery not found.</p>}
         </div>
       </div>
 
-      {/* Lightbox Modal */}
       <Lightbox
         isOpen={lightboxOpen}
         onClose={closeLightbox}
@@ -124,31 +98,6 @@ const GalleryPage = () => {
           caption: image.title,
           alt: image.alt,
         })) || []}
-        renderHeader={() => (
-          <div className="flex justify-between px-4 py-2 bg-black text-white">
-            <button
-              className="p-2 bg-gray-700 rounded"
-              onClick={goToPreviousImage}
-              disabled={gallery?.length === 1}
-            >
-              Previous
-            </button>
-            <button
-              className="p-2 bg-gray-700 rounded"
-              onClick={goToNextImage}
-              disabled={gallery?.length === 1}
-            >
-              Next
-            </button>
-          </div>
-        )}
-        renderFooter={() => (
-          <div className="text-center py-2 bg-black text-white">
-            <p>
-              Image {currentImageIndex + 1} of {gallery?.length || 0}
-            </p>
-          </div>
-        )}
       />
 
       <div className="fixed bottom-0 w-full">
