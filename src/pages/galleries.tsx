@@ -5,32 +5,32 @@ import Header from "@/components/ui/header";
 export default function Galleries() {
   const imagesArray = [
     {
-      src: "images/brighton/1.jpg",
+      src: "images/Brighton/1.jpg",
       title: "Brighton",
       alt: "Brighton",
     },
     {
-      src: "images/protest/1.jpg",
+      src: "images/Protest/1.jpg",
       title: "Protest",
       alt: "Protest",
     },
     {
-      src: "images/grayscale/1.jpg",
+      src: "images/Grayscale/1.jpg",
       title: "Grayscale",
       alt: "Grayscale",
     },
     {
-      src: "images/brighton beach/1.jpg",
+      src: "images/Brighton Beach/1.jpg",
       title: "Brighton Beach",
       alt: "Brighton Beach",
     },
     {
-      src: "images/pride/1.jpg",
+      src: "images/Pride/1.jpg",
       title: "Pride",
       alt: "Pride",
     },
     {
-      src: "images/birds/1.jpg",
+      src: "images/Birds/1.jpg",
       title: "Birds",
       alt: "Birds",
     },

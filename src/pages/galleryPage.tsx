@@ -26,12 +26,12 @@ const GalleryPage = () => {
 
   // Use keys with hyphens to match URL patterns
   const galleryData: GalleryData = {
-    brighton: galleryGeneration("brighton", 20),
-    protest: galleryGeneration("protest", 20),
-    grayscale: galleryGeneration("grayscale", 20),
-    "brighton-beach": galleryGeneration("brighton beach", 15),
-    pride: galleryGeneration("pride", 17),
-    birds: galleryGeneration("birds", 16),
+    brighton: galleryGeneration("Brighton", 20),
+    protest: galleryGeneration("Protest", 20),
+    grayscale: galleryGeneration("Grayscale", 20),
+    "brighton-beach": galleryGeneration("Brighton Beach", 15),
+    pride: galleryGeneration("Pride", 17),
+    birds: galleryGeneration("Birds", 16),
   };
 
   // The key matches the URL parameter directly
