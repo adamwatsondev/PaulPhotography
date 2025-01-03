@@ -69,9 +69,19 @@ export default function Home() {
 
       {/* Main Content with Margin */}
       <div className="grid grid-cols-2 gap-12 2xl:gap-20 items-center justify-center mx-4 xl:mx-40 sm:mx-20 mt-40 xl:mt-60">
+        {/* Text Section */}
+        <div className="xl:col-span-1 justify-self-center xl:justify-self-end col-span-2 flex flex-col gap-8">
+          <span className="text-black font-old-standard md:text-5xl text-2xl font-bold leading-tight">
+            Got questions?
+          </span>
+          <span className="text-black font-old-standard md:text-2xl text-xl font-medium leading-tight">
+            Contact me and let's have a chat.
+          </span>
+        </div>
+
         {/* Card Section */}
-        <div className="xl:col-span-1 col-span-2 justify-self-end">
-          <Card className="w-full max-w-md h-full">
+        <div className="xl:col-span-1 col-span-2 justify-self-center xl:justify-self-start">
+          <Card className="w-full max-w-lg h-full">
             <CardContent>
               <Form {...form}>
                 <form
@@ -157,16 +167,6 @@ export default function Home() {
               </Form>
             </CardContent>
           </Card>
-        </div>
-
-        {/* Text Section */}
-        <div className="xl:col-span-1 col-span-2 flex flex-col gap-8">
-          <span className="text-black font-old-standard md:text-5xl text-2xl font-bold leading-tight">
-            Got questions?
-          </span>
-          <span className="text-black font-old-standard md:text-2xl text-xl font-medium leading-tight">
-            Contact me and let's have a chat.
-          </span>
         </div>
       </div>
 
