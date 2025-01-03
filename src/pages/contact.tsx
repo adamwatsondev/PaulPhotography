@@ -3,8 +3,6 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Button } from "@/components/ui/nav-button";
-import { Img } from "react-image";
-import { Link } from "react-router-dom";
 import { Input } from "@/components/ui/input";
 import {
   Form,
