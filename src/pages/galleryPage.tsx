@@ -19,7 +19,7 @@ const GalleryPage = () => {
 
   const galleryGeneration = (folder: string, count: number): GalleryImage[] =>
     Array.from({ length: count }, (_, i) => ({
-      src: `/images/${folder}/${i + 1}.jpg`,
+      src: `../images/${folder}/${i + 1}.jpg`,
       alt: `Image ${i + 1}`,
       title: `Image ${i + 1}`,
     }));
