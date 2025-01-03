@@ -4,14 +4,15 @@ import { Button } from "@/components/ui/nav-button";
 import { Img } from "react-image";
 import { Link } from "react-router-dom";
 
-export default function Home() {
+export default function About() {
   return (
     <div className="flex pb-20">
+      {/* Fixed Header */}
       <div className="fixed top-0 left-0 w-full z-10 bg-white shadow-md overflow-hidden">
         <Header />
       </div>
 
-      <div className="grid grid-cols-2 gap-12 2xl:gap-20 items-center justify-center mx-4 xl:mx-40 sm:mx-20 mt-40">
+      <div className="grid grid-cols-2 gap-12 2xl:gap-20 items-center justify-center mx-4 xl:mx-40 sm:mx-20 mt-40 xl:mt-60">
         <div className="xl:col-span-1 col-span-2">
           <Img
             src="..\images\profile-photo.jpg"
@@ -42,7 +43,8 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="fixed bottom-0 w-full">
+      {/* Footer */}
+      <div className="fixed bottom-0 w-full overflow-hidden">
         <Footer />
       </div>
     </div>

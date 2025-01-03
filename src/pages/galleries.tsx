@@ -37,7 +37,7 @@ export default function Galleries() {
   ];
 
   return (
-    <div>
+    <div className="flex pb-20">
       <div className="fixed top-0 left-0 w-full z-10 bg-white shadow-md overflow-hidden">
         <Header />
       </div>
@@ -69,7 +69,8 @@ export default function Galleries() {
         </div>
       </div>
 
-      <div className="fixed bottom-0 w-full">
+      {/* Footer */}
+      <div className="fixed bottom-0 w-full overflow-hidden">
         <Footer />
       </div>
     </div>

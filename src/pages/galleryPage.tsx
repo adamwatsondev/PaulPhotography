@@ -58,19 +58,22 @@ const GalleryPage = () => {
 
   const goToPreviousImage = () => {
     if (gallery) {
-      setCurrentImageIndex((prevIndex) => (prevIndex - 1 + gallery.length) % gallery.length);
+      setCurrentImageIndex(
+        (prevIndex) => (prevIndex - 1 + gallery.length) % gallery.length
+      );
     }
   };
 
   return (
-    <div className={lightboxOpen ? "blurred-background" : ""}>
+    <div className={lightboxOpen ? "blurred-background" : "flex pb-20"}>
       <div className="fixed top-0 left-0 w-full z-10 bg-white shadow-md overflow-hidden">
         <Header />
       </div>
 
       <div className="flex flex-col items-center justify-center px-10 lg:px-20 pb-20 mt-32">
         <span className="text-5xl capitalize font-bold text-center font-old-standard text-black mb-8">
-          {name?.replace(/-/g, " ")} {/* Replace hyphens with spaces for display */}
+          {name?.replace(/-/g, " ")}{" "}
+          {/* Replace hyphens with spaces for display */}
         </span>
 
         <div className="grid lg:grid-cols-3 gap-8">
@@ -93,14 +96,17 @@ const GalleryPage = () => {
         currentIndex={currentImageIndex}
         onNext={goToNextImage}
         onPrev={goToPreviousImage}
-        images={gallery?.map((image) => ({
-          src: image.src,
-          caption: image.title,
-          alt: image.alt,
-        })) || []}
+        images={
+          gallery?.map((image) => ({
+            src: image.src,
+            caption: image.title,
+            alt: image.alt,
+          })) || []
+        }
       />
 
-      <div className="fixed bottom-0 w-full">
+      {/* Footer */}
+      <div className="fixed bottom-0 w-full overflow-hidden">
         <Footer />
       </div>
     </div>

@@ -186,7 +186,8 @@ export default function Home() {
         {/* Featured Galleries */}
       </div>
 
-      <div className="fixed bottom-0 w-full">
+      {/* Footer */}
+      <div className="fixed bottom-0 w-full overflow-hidden">
         <Footer />
       </div>
     </div>
