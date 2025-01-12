@@ -3,6 +3,8 @@ import Header from "@/components/ui/header";
 import Lightbox from "react-spring-lightbox";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { Img } from "react-image";
+import { Skeleton } from "@/components/ui/skeleton";
 
 type GalleryImage = {
   src: string;
@@ -21,17 +23,17 @@ const GalleryPage = () => {
     Array.from({ length: count }, (_, i) => ({
       src: `../images/${folder}/${i + 1}.jpg`,
       alt: `Image ${i + 1}`,
-      title: `Image ${i + 1}`,
+      title: `${i + 1}`,
     }));
 
   // Use keys with hyphens to match URL patterns
   const galleryData: GalleryData = {
-    brighton: galleryGeneration("brighton", 20),
+    brighton: galleryGeneration("Brighton", 20),
     protest: galleryGeneration("Protest", 20),
-    grayscale: galleryGeneration("Grayscale", 20),
-    "brighton-beach": galleryGeneration("Brighton Beach", 15),
+    "black-&-white": galleryGeneration("BlackAndWhite", 20),
+    "low-tide-brighton-beach": galleryGeneration("LowTideBrightonBeach", 15),
     pride: galleryGeneration("Pride", 17),
-    birds: galleryGeneration("Birds", 16),
+    starlings: galleryGeneration("Starlings", 16),
   };
 
   // The key matches the URL parameter directly
@@ -65,26 +67,55 @@ const GalleryPage = () => {
   };
 
   return (
-    <div className={lightboxOpen ? "blurred-background" : "flex pb-20"}>
-      <div className="fixed top-0 left-0 w-full z-10 bg-white shadow-md overflow-hidden">
+    <div
+      className={
+        lightboxOpen
+          ? "blurred-background"
+          : "flex flex-col gap-8 md:gap-20 pb-20"
+      }
+    >
+      {/* Header */}
+      <div className="fixed top-0 left-0 w-full z-10 bg-white shadow-md h-16">
         <Header />
       </div>
 
       <div className="flex flex-col px-4 md:px-10 lg:px-20 pb-20 mt-32">
         <span className="text-5xl capitalize font-bold text-center font-old-standard text-black mb-8">
           {name?.replace(/-/g, " ")}{" "}
-          {/* Replace hyphens with spaces for display */}
         </span>
 
+        {/* Images Grid */}
         <div className="grid grid-cols-1 xl:grid-cols-2 2xl:grid-cols-3 gap-8">
           {gallery?.map((image: GalleryImage, index: number) => (
-            <div key={index} className="flex justify-center items-center">
-              <img
-                className="lg:h-[500px] h-auto w-full cursor-pointer"
+            <div
+              key={index}
+              className="flex flex-col gap-4 justify-center items-center"
+            >
+              <Img
                 src={image.src}
                 alt={image.alt}
                 onClick={() => openLightbox(index)}
+                className="w-full h-full hover:cursor-pointer max-h-[650px] object-cover"
+                loader={
+                  <Skeleton className="absolute inset-0 max-h-[650px] w-full h-full bg-gray-200" />
+                }
+                unloader={
+                  <div className="w-full h-full max-h-[650px] bg-gray-300 flex items-center justify-center">
+                    <span className="text-black text-sm">
+                      Image failed to load
+                    </span>
+                  </div>
+                }
               />
+
+              {/* Conditional rendering of Title */}
+              {image.src ? (
+                <span className="text-3xl font-old-standard text-center font-bold leading-tight text-black">
+                  {image.title}
+                </span>
+              ) : (
+                <Skeleton className="h-6 w-3/4 bg-gray-200 rounded" />
+              )}
             </div>
           )) || (
             <span className="text-center text-gray-600">
@@ -100,6 +131,53 @@ const GalleryPage = () => {
         currentIndex={currentImageIndex}
         onNext={goToNextImage}
         onPrev={goToPreviousImage}
+        singleClickToZoom={true}
+        renderPrevButton={({ canPrev }) =>
+          canPrev && (
+            <button
+              onClick={goToPreviousImage}
+              className="absolute bottom-6 left-16 z-50"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-12 w-12 text-white"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M15 19l-7-7 7-7"
+                />
+              </svg>
+            </button>
+          )
+        }
+        renderNextButton={({ canNext }) =>
+          canNext && (
+            <button
+              onClick={goToNextImage}
+              className="absolute bottom-6 right-16 z-50"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-12 w-12 text-white"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M9 5l7 7-7 7"
+                />
+              </svg>
+            </button>
+          )
+        }
         images={
           gallery?.map((image) => ({
             src: image.src,

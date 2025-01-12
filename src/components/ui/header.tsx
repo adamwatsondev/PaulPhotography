@@ -18,6 +18,7 @@ export default function Header() {
           alt="Logo"
           width={250}
           height={250}
+          loader={<div className="bg-gray-200 w-full h-full" />}
         />
       </Link>
 
