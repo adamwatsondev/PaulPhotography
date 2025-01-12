@@ -1,6 +1,6 @@
 const imagesArray = [
   {
-    src: "images/Brighton/5.jpg",
+    src: "images/Brighton/9.jpg",
     title: "Brighton",
     alt: "Brighton",
   },
