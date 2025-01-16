@@ -3,7 +3,7 @@ import Header from "@/components/ui/header";
 import Lightbox from "react-spring-lightbox";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { Img } from "react-image";
+// import { Img } from "react-image";
 import { Skeleton } from "@/components/ui/skeleton";
 
 type GalleryImage = {

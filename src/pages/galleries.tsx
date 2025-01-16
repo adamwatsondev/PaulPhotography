@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import Footer from "@/components/ui/footer";
 import Header from "@/components/ui/header";
 import imagesArray from "@/data/imagesArray";
-import { Img } from "react-image";
+// import { Img } from "react-image";
 import { Skeleton } from "@/components/ui/skeleton";
 
 export default function Galleries() {

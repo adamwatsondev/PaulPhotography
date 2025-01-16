@@ -1,6 +1,6 @@
 import Footer from "@/components/ui/footer";
 import Header from "@/components/ui/header";
-import { Img } from "react-image";
+// import { Img } from "react-image";
 import { useEffect } from "react";
 import {
   Carousel,
