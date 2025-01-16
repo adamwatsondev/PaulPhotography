@@ -32,20 +32,20 @@ export default function Galleries() {
                   .toLowerCase()}`}
                 className="relative w-full max-h-[650px] aspect-[4/3]"
               >
-                <Img
+                <img
                   src={image.src}
                   alt={image.alt}
                   className="absolute inset-0 w-full h-full max-h-[650px] object-cover"
-                  loader={
-                    <Skeleton className="absolute inset-0 w-full max-h-[650px] h-full bg-gray-200" />
-                  }
-                  unloader={
-                    <div className="absolute inset-0 w-full h-full bg-gray-300 max-h-[650px] flex items-center justify-center">
-                      <span className="text-black text-sm">
-                        Image failed to load
-                      </span>
-                    </div>
-                  }
+                  // loader={
+                  //   <Skeleton className="absolute inset-0 w-full max-h-[650px] h-full bg-gray-200" />
+                  // }
+                  // unloader={
+                  //   <div className="absolute inset-0 w-full h-full bg-gray-300 max-h-[650px] flex items-center justify-center">
+                  //     <span className="text-black text-sm">
+                  //       Image failed to load
+                  //     </span>
+                  //   </div>
+                  // }
                 />
               </Link>
 

@@ -1,11 +1,11 @@
 const imagesArray = [
   {
-    src: "images/Brighton/9.jpg",
+    src: "images/Brighton/1.jpg",
     title: "Brighton",
     alt: "Brighton",
   },
   {
-    src: "images/Protest/4.jpg",
+    src: "images/Protest/1.jpg",
     title: "Protest",
     alt: "Protest",
   },
@@ -15,17 +15,17 @@ const imagesArray = [
     alt: "Black & White",
   },
   {
-    src: "images/LowTideBrightonBeach/2.jpg",
+    src: "images/LowTideBrightonBeach/1.jpg",
     title: "Low Tide Brighton Beach",
     alt: "Low Tide Brighton Beach",
   },
   {
-    src: "images/Pride/9.jpg",
+    src: "images/Pride/1.jpg",
     title: "Pride",
     alt: "Pride",
   },
   {
-    src: "images/Starlings/8.jpg",
+    src: "images/Starlings/1.jpg",
     title: "Starlings",
     alt: "Starlings",
   },

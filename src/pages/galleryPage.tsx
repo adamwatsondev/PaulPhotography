@@ -91,21 +91,21 @@ const GalleryPage = () => {
               key={index}
               className="flex flex-col gap-4 justify-center items-center"
             >
-              <Img
+              <img
                 src={image.src}
                 alt={image.alt}
                 onClick={() => openLightbox(index)}
                 className="w-full h-full hover:cursor-pointer max-h-[650px] object-cover"
-                loader={
-                  <Skeleton className="absolute inset-0 max-h-[650px] w-full h-full bg-gray-200" />
-                }
-                unloader={
-                  <div className="w-full h-full max-h-[650px] bg-gray-300 flex items-center justify-center">
-                    <span className="text-black text-sm">
-                      Image failed to load
-                    </span>
-                  </div>
-                }
+                // loader={
+                //   <Skeleton className="absolute inset-0 max-h-[650px] w-full h-full bg-gray-200" />
+                // }
+                // unloader={
+                //   <div className="w-full h-full max-h-[650px] bg-gray-300 flex items-center justify-center">
+                //     <span className="text-black text-sm">
+                //       Image failed to load
+                //     </span>
+                //   </div>
+                // }
               />
 
               {/* Conditional rendering of Title */}
