@@ -2,10 +2,20 @@ import Footer from "@/components/ui/footer";
 import Header from "@/components/ui/header";
 import { Button } from "@/components/ui/nav-button";
 import { Skeleton } from "@/components/ui/skeleton";
-import { Img } from "react-image";
 import { Link } from "react-router-dom";
+import { Cloudinary } from "@cloudinary/url-gen";
+import { auto } from "@cloudinary/url-gen/actions/resize";
+import { autoGravity } from "@cloudinary/url-gen/qualifiers/gravity";
+import { AdvancedImage } from "@cloudinary/react";
 
 export default function About() {
+  const cld = new Cloudinary({ cloud: { cloudName: "dalts7djg" } });
+  const img = cld
+    .image("profile-photo")
+    .format("auto")
+    .quality("auto")
+    .resize(auto().gravity(autoGravity()).width(1000).height(650));
+
   return (
     <div className="flex pb-20">
       {/* Fixed Header */}
@@ -15,10 +25,10 @@ export default function About() {
 
       <div className="grid grid-cols-2 gap-12 2xl:gap-20 items-center justify-center mx-4 xl:mx-40 sm:mx-20 mt-40 xl:mt-60">
         <div className="xl:col-span-1 col-span-2 relative w-full aspect-[3/2]">
-          <Img
-            src="..\images\profile-photo.jpg"
-            alt="Photographer"
+          <AdvancedImage
             className="absolute inset-0 w-full h-full object-cover"
+            cldImg={img}
+            alt="Paul Cahill"
             loader={<Skeleton className="bg-gray-200 w-full h-full" />}
           />
         </div>
@@ -46,7 +56,7 @@ export default function About() {
       </div>
 
       {/* Footer */}
-      <div className="fixed bottom-0 w-full overflow-hidden">
+      <div className="fixed bottom-0 left-0 w-full h-12 bg-white shadow-md flex items-center justify-center">
         <Footer />
       </div>
     </div>

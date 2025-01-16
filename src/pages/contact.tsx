@@ -17,6 +17,7 @@ import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import Footer from "@/components/ui/footer";
 import emailjs from "@emailjs/browser";
 import { toast, Toaster } from "sonner";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 const schema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters."),
@@ -66,9 +67,34 @@ export default function Home() {
       <div className="fixed top-0 left-0 w-full z-10 bg-white shadow-md overflow-hidden">
         <Header />
       </div>
-
-      {/* Main Content with Margin */}
       <div className="grid grid-cols-2 gap-12 2xl:gap-20 items-center justify-center mx-4 xl:mx-40 sm:mx-20 mt-40 xl:mt-60">
+        <div className="xl:col-span-2 col-span-2 justify-self-center xl:justify-self-center">
+          <Tabs defaultValue="general">
+            <TabsList className="flex justify-center gap-4">
+              <TabsTrigger
+                value="general"
+                className="px-4  py-2 text-sm font-medium rounded-md border hover:text-black border-gray-300 hover:bg-gray-100"
+              >
+                General
+              </TabsTrigger>
+              <TabsTrigger
+                value="purchase"
+                className="px-4 py-2 text-sm font-medium rounded-md border border-gray-300 hover:text-black hover:bg-white"
+              >
+                Purchasing
+              </TabsTrigger>
+            </TabsList>
+            <TabsContent value="general" className="mt-4">
+              Make changes to your account here.
+            </TabsContent>
+            <TabsContent value="purchase" className="mt-4">
+              Change your password here.
+            </TabsContent>
+          </Tabs>
+        </div>
+
+        {/* General Content with Margin */}
+
         {/* Text Section */}
         <div className="xl:col-span-1 justify-self-center xl:justify-self-end col-span-2 flex flex-col gap-8">
           <span className="text-black font-old-standard md:text-5xl text-2xl font-bold leading-tight">
@@ -173,7 +199,7 @@ export default function Home() {
       <Toaster position="bottom-right" />
 
       {/* Footer */}
-      <div className="fixed bottom-0 w-full overflow-hidden">
+      <div className="fixed bottom-0 left-0 w-full h-12 bg-white shadow-md flex items-center justify-center">
         <Footer />
       </div>
     </div>

@@ -11,7 +11,7 @@ export default function Footer() {
             className="text-black bg-white focus:outline-none"
           >
             <Img
-              className="h-9 w-9"
+              className="h-12 w-12"
               src="../images/Assets/mail.jpg"
               alt="Mail"
             />
@@ -21,7 +21,7 @@ export default function Footer() {
             className="text-black bg-white focus:outline-none"
           >
             <Img
-              className="h-6 w-6"
+              className="h-8 w-8"
               src="../images/Assets/instagram-icon.png"
               alt="Instagram"
             />

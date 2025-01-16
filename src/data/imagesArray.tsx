@@ -1,34 +1,14 @@
 const imagesArray = [
+  { id: "1_e3g5x0", title: "Brighton", alt: "Brighton" },
+  { id: "1-min_sculdb", title: "Protest", alt: "Protest" },
+  { id: "1-min_fecaor", title: "Black & White", alt: "Black & White" },
   {
-    src: "images/Brighton/1.jpg",
-    title: "Brighton",
-    alt: "Brighton",
-  },
-  {
-    src: "images/Protest/1.jpg",
-    title: "Protest",
-    alt: "Protest",
-  },
-  {
-    src: "images/BlackAndWhite/1.jpg",
-    title: "Black & White",
-    alt: "Black & White",
-  },
-  {
-    src: "images/LowTideBrightonBeach/1.jpg",
+    id: "1-min_vyd3ue",
     title: "Low Tide Brighton Beach",
     alt: "Low Tide Brighton Beach",
   },
-  {
-    src: "images/Pride/1.jpg",
-    title: "Pride",
-    alt: "Pride",
-  },
-  {
-    src: "images/Starlings/1.jpg",
-    title: "Starlings",
-    alt: "Starlings",
-  },
+  { id: "1-min_kiv6jj", title: "Pride", alt: "Pride" },
+  { id: "1_mfbwtw", title: "Starlings", alt: "Starlings" },
 ];
 
 export default imagesArray;

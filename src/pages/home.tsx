@@ -1,7 +1,5 @@
 import Footer from "@/components/ui/footer";
 import Header from "@/components/ui/header";
-// import { Img } from "react-image";
-import { useEffect } from "react";
 import {
   Carousel,
   CarouselContent,
@@ -9,22 +7,23 @@ import {
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 import { Link } from "react-router-dom";
-import imagesArray from "@/data/imagesArray";
 import { Skeleton } from "@/components/ui/skeleton";
+import { Cloudinary } from "@cloudinary/url-gen";
+import { auto } from "@cloudinary/url-gen/actions/resize";
+import { autoGravity } from "@cloudinary/url-gen/qualifiers/gravity";
+import { AdvancedImage } from "@cloudinary/react";
+import imagesArray from "@/data/imagesArray";
 
 export default function Home() {
-  useEffect(() => {
-    // Dynamically load the Instagram embed script
-    const script = document.createElement("script");
-    script.src = "https://www.instagram.com/embed.js";
-    script.async = true;
-    document.body.appendChild(script);
+  const cld = new Cloudinary({ cloud: { cloudName: "dalts7djg" } });
 
-    return () => {
-      // Cleanup script on component unmount
-      document.body.removeChild(script);
-    };
-  }, []);
+  const imgs = imagesArray.map((image) =>
+    cld
+      .image(image.id)
+      .format("auto")
+      .quality("auto")
+      .resize(auto().gravity(autoGravity()).width(1000).height(650))
+  );
 
   return (
     <div className="flex flex-col gap-8 md:gap-20 pb-20">
@@ -40,7 +39,7 @@ export default function Home() {
             opts={{ loop: true }}
             plugins={[
               Autoplay({
-                delay: 2000,
+                delay: 3000,
                 stopOnInteraction: false,
                 stopOnMouseEnter: false,
               }),
@@ -51,13 +50,16 @@ export default function Home() {
               {imagesArray.map((image, index) => (
                 <CarouselItem
                   key={index}
-                  className="xl:h-[1000px] 2xl:h-[1300px] md:h-[800px} w-full"
+                  className="xl:h-[1000px] 2xl:h-[1300px] md:h-[800px] w-full"
                 >
                   <div className="p-1">
-                    <img
-                      className="xl:h-[1000px] 2xl:h-[1300px] md:h-[800px] h-auto w-full"
-                      src={image.src}
-                      alt={`Image ${index + 1}`}
+                    <AdvancedImage
+                      cldImg={imgs[index]}
+                      className="w-full h-full object-cover"
+                      alt={image.alt}
+                      loader={
+                        <Skeleton className="bg-gray-200 w-full h-full" />
+                      }
                     />
                   </div>
                 </CarouselItem>
@@ -87,32 +89,30 @@ export default function Home() {
                 key={index}
                 className="flex flex-col gap-4 justify-center items-center"
               >
-                {/* Skeleton and Image */}
                 <Link
                   to={`/galleries/${image.title
                     .replace(/\s+/g, "-")
                     .toLowerCase()}`}
                   className="relative w-full max-h-[650px] aspect-[4/3]"
                 >
-                  <img
-                    src={image.src}
+                  <AdvancedImage
+                    cldImg={imgs[index]}
+                    className="w-full h-full object-cover"
                     alt={image.alt}
-                    className="absolute inset-0 max-h-[650px] w-full h-full object-cover"
-                    // loader={
-                    //   <Skeleton className="absolute inset-0 w-full h-full bg-gray-200" />
-                    // }
-                    // unloader={
-                    //   <div className="absolute inset-0 w-full h-full bg-gray-300 flex items-center justify-center">
-                    //     <span className="text-black text-sm">
-                    //       Image failed to load
-                    //     </span>
-                    //   </div>
-                    // }
+                    loader={
+                      <Skeleton className="absolute inset-0 w-full h-full bg-gray-200" />
+                    }
+                    unloader={
+                      <div className="absolute inset-0 w-full h-full bg-gray-300 flex items-center justify-center">
+                        <span className="text-black text-sm">
+                          Image failed to load
+                        </span>
+                      </div>
+                    }
                   />
                 </Link>
-
                 {/* Conditional rendering of Title */}
-                {image.src ? (
+                {image.id ? (
                   <span className="text-3xl font-old-standard text-center font-bold leading-tight text-black">
                     {image.title}
                   </span>
@@ -126,7 +126,7 @@ export default function Home() {
       </div>
 
       {/* Footer */}
-      <div className="fixed bottom-0 w-full overflow-hidden">
+      <div className="fixed bottom-0 left-0 w-full h-12 bg-white shadow-md flex items-center justify-center">
         <Footer />
       </div>
     </div>
