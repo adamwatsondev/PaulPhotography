@@ -13,7 +13,8 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/galleries" element={<Galleries />} />
-          <Route path="/galleries/:name" element={<GalleryPage />} /> {/* Use :name for dynamic gallery name */}
+          <Route path="/galleries/:name" element={<GalleryPage />} />{" "}
+          {/* Use :name for dynamic gallery name */}
           <Route path="/contact" element={<Contact />} />
         </Routes>
       </Router>

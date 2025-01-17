@@ -7,7 +7,7 @@ export default function Footer() {
       <div className="flex w-full justify-center px-16 h-16 items-center bg-white shadow-md">
         <div className="flex items-center gap-4 justify-center">
           <Link
-            to="/contact"
+            to="/contact?tab=general"
             className="text-black bg-white focus:outline-none"
           >
             <Img

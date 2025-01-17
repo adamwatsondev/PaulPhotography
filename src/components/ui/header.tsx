@@ -86,7 +86,7 @@ export default function Header() {
                 Galleries
               </a>
               <a
-                href="/contact"
+                href="/contact?tab=general"
                 className="text-black font-old-standard hover:underline hover:underline-offset-4 font-bold hover:text-gray-400"
               >
                 Contact
@@ -117,7 +117,7 @@ export default function Header() {
           Galleries
         </a>
         <a
-          href="/contact"
+          href="/contact?tab=general"
           className="text-black font-old-standard hover:underline hover:underline-offset-4 font-bold hover:text-gray-400 text-2xl"
         >
           Contact

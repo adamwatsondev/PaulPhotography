@@ -22,7 +22,7 @@ export default function Home() {
       .image(image.id)
       .format("auto")
       .quality("auto")
-      .resize(auto().gravity(autoGravity()).width(1000).height(650))
+      .resize(auto().gravity(autoGravity()).width(2000).height(1000))
   );
 
   return (

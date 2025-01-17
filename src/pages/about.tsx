@@ -45,7 +45,7 @@ export default function About() {
             my work highly commended and featured in the British Life
             Photography Awards book and exhibition, which toured the country.
           </span>
-          <Link to="/contact">
+          <Link to="/contact?tab=general">
             <Button className="text-white h-12 w-40 font-bold py-2 px-4 rounded-sm">
               <span className="font-old-standard text-xl font-semibold">
                 Get in touch
