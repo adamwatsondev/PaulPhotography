@@ -76,24 +76,6 @@ export default function Galleries() {
       </div>
 
       {/* Footer */}
-      <div className="fixed bottom-0 left-0 w-full h-20 bg-white shadow-md flex items-center justify-center">
-        <Footer />
-      </div>
-    </div>
-  );
-
-  return (
-    <div className="flex flex-col gap-8 md:gap-20 pb-20">
-      {/* Header */}
-      <div className="fixed top-0 left-0 w-full z-10 bg-white shadow-md h-16">
-        <Header />
-      </div>
-
-      <div className="flex flex-col px-4 md:px-10 lg:px-20 pb-20 mt-32">
-        <span className="text-5xl font-bold text-center font-old-standard text-black mb-8">
-          Under Maintenance
-        </span>
-      </div>
       <div className="fixed bottom-0 left-0 w-full h-12 bg-white shadow-md flex items-center justify-center">
         <Footer />
       </div>
