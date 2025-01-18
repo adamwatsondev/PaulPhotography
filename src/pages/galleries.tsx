@@ -4,8 +4,7 @@ import Header from "@/components/ui/header";
 import imagesArray from "@/data/imagesArray";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Cloudinary } from "@cloudinary/url-gen";
-import { auto } from "@cloudinary/url-gen/actions/resize";
-import { autoGravity } from "@cloudinary/url-gen/qualifiers/gravity";
+import { fill } from "@cloudinary/url-gen/actions/resize";
 import { AdvancedImage } from "@cloudinary/react";
 
 export default function Galleries() {
@@ -16,7 +15,7 @@ export default function Galleries() {
       .image(image.id)
       .format("auto")
       .quality("auto")
-      .resize(auto().gravity(autoGravity()).width(1000).height(650))
+      .resize(fill().width(1000).height(650))
   );
 
   return (

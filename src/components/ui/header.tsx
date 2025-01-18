@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { Img } from "react-image";
 import { Link } from "react-router-dom";
 
 export default function Header() {
@@ -12,14 +11,15 @@ export default function Header() {
   return (
     <div className="flex w-full justify-between sm:px-32 h-28 items-center bg-white shadow-md relative">
       {/* Logo and Title */}
-      <Link to="/" className="hidden lg:block items-center space-x-4">
-        <Img
-          src="../images/Assets/logo.png"
-          alt="Logo"
-          width={250}
-          height={250}
-          loader={<div className="bg-gray-200 w-full h-full" />}
-        />
+      <Link to="/" className="hidden lg:block items-start space-x-4">
+        <div className="col-span-3 text-start flex flex-col text-black">
+          <span className="text-lg sm:text-2xl xl:text-3xl 2xl:text-4xl font-old-standard">
+            Paul Cahill
+          </span>
+          <span className="text-xs sm:text-md xl:text-lg 2xl:text-xl font-old-standard">
+            Brighton Based Photographer
+          </span>
+        </div>
       </Link>
 
       {/* Hamburger Icon for mobile */}

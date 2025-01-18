@@ -5,8 +5,7 @@ import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Cloudinary } from "@cloudinary/url-gen";
-import { auto } from "@cloudinary/url-gen/actions/resize";
-import { autoGravity } from "@cloudinary/url-gen/qualifiers/gravity";
+import { fill } from "@cloudinary/url-gen/actions/resize";
 import { AdvancedImage } from "@cloudinary/react";
 import galleryArray from "@/data/galleryArray";
 
@@ -28,7 +27,7 @@ const GalleryPage = () => {
       .image(image.id)
       .format("auto")
       .quality("auto")
-      .resize(auto().gravity(autoGravity()).width(1000).height(650))
+      .resize(fill().width(1000).height(650))
   );
 
   useEffect(() => {

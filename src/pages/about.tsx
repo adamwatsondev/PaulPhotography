@@ -4,9 +4,8 @@ import { Button } from "@/components/ui/nav-button";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Link } from "react-router-dom";
 import { Cloudinary } from "@cloudinary/url-gen";
-import { auto } from "@cloudinary/url-gen/actions/resize";
-import { autoGravity } from "@cloudinary/url-gen/qualifiers/gravity";
 import { AdvancedImage } from "@cloudinary/react";
+import { fill } from "@cloudinary/url-gen/actions/resize";
 
 export default function About() {
   const cld = new Cloudinary({ cloud: { cloudName: "dalts7djg" } });
@@ -14,7 +13,7 @@ export default function About() {
     .image("profile-photo")
     .format("auto")
     .quality("auto")
-    .resize(auto().gravity(autoGravity()).width(1000).height(650));
+    .resize(fill().width(1000).height(650));
 
   return (
     <div className="flex pb-20">

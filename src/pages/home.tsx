@@ -9,8 +9,7 @@ import Autoplay from "embla-carousel-autoplay";
 import { Link } from "react-router-dom";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Cloudinary } from "@cloudinary/url-gen";
-import { auto } from "@cloudinary/url-gen/actions/resize";
-import { autoGravity } from "@cloudinary/url-gen/qualifiers/gravity";
+import { fill } from "@cloudinary/url-gen/actions/resize";
 import { AdvancedImage } from "@cloudinary/react";
 import imagesArray from "@/data/imagesArray";
 
@@ -22,7 +21,7 @@ export default function Home() {
       .image(image.id)
       .format("auto")
       .quality("auto")
-      .resize(auto().gravity(autoGravity()).width(2000).height(1000))
+      .resize(fill().width(1000).height(650))
   );
 
   return (
@@ -32,7 +31,7 @@ export default function Home() {
         <Header />
       </div>
 
-      <div className="grid grid-cols-3 gap-20 px-4 md:px-10 lg:px-20 pb-20 mt-32">
+      <div className="grid grid-cols-3 gap-12 px-4 md:px-10 lg:px-20 pb-20 mt-32">
         {/* Carousel */}
         <div className="col-span-3 relative xl:h-[1000px] 2xl:h-[1300px] md:h-[800px] w-full">
           <Carousel
@@ -66,15 +65,6 @@ export default function Home() {
               ))}
             </CarouselContent>
           </Carousel>
-
-          <div className="absolute inset-10 md:inset-60 xl:inset-96 text-center flex flex-col text-white">
-            <span className="text-xl sm:text-7xl xl:text-8xl 2xl:text-9xl font-old-standard text-shadow">
-              Paul Cahill
-            </span>
-            <span className="text-sm sm:text-2xl xl:text-2xl 2xl:text-3xl font-old-standard text-shadow">
-              Brighton Based Photographer
-            </span>
-          </div>
         </div>
 
         {/* Featured Galleries */}
