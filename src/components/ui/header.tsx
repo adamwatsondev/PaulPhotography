@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Img } from "react-image";
 import { Link } from "react-router-dom";
 
 export default function Header() {
@@ -97,7 +98,7 @@ export default function Header() {
       </div>
 
       {/* Navigation Menu (desktop) */}
-      <nav className="sm:flex items-center space-x-16 hidden">
+      <nav className="sm:flex items-end space-x-16 hidden">
         <a
           href="/"
           className="text-black hover:underline hover:underline-offset-4 font-old-standard font-bold hover:text-gray-400 text-2xl"
@@ -121,6 +122,13 @@ export default function Header() {
           className="text-black font-old-standard hover:underline hover:underline-offset-4 font-bold hover:text-gray-400 text-2xl"
         >
           Contact
+        </a>
+        <a href="/basket" className="items-center">
+          <Img
+            className="h-10 w-18"
+            src="../images/Assets/basket.jpg"
+            alt="Instagram"
+          />
         </a>
       </nav>
     </div>

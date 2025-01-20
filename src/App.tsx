@@ -4,6 +4,7 @@ import About from "./pages/about";
 import Galleries from "./pages/galleries";
 import Contact from "./pages/contact";
 import GalleryPage from "./pages/galleryPage"; // Import the GalleryPage component
+import Basket from "./pages/basket";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/galleries/:name" element={<GalleryPage />} />{" "}
           {/* Use :name for dynamic gallery name */}
           <Route path="/contact" element={<Contact />} />
+          <Route path="/basket" element={<Basket />} />
         </Routes>
       </Router>
     </div>
