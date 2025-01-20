@@ -26,6 +26,7 @@
     "embla-carousel-autoplay": "^8.5.1",
     "embla-carousel-react": "^8.5.1",
     "lucide-react": "^0.469.0",
+    "node-fetch": "^3.3.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-hook-form": "^7.54.2",
@@ -39,6 +40,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.17.0",
+    "@rollup/plugin-replace": "^6.0.2",
     "@types/node": "^22.10.2",
     "@types/react": "^18.3.17",
     "@types/react-dom": "^18.3.5",
@@ -52,6 +54,7 @@
     "tailwindcss": "^3.4.17",
     "typescript": "~5.6.2",
     "typescript-eslint": "^8.18.1",
-    "vite": "^6.0.3"
+    "vite": "^6.0.3",
+    "vite-plugin-node-polyfills": "^0.23.0"
   }
 }
