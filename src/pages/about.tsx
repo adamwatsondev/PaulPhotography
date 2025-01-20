@@ -8,9 +8,7 @@ import { AdvancedImage } from "@cloudinary/react";
 import { fill } from "@cloudinary/url-gen/actions/resize";
 
 export default function About() {
-  const cld = new Cloudinary({
-    cloud: { cloudName: `${import.meta.env.VITE_CLOUDINARY_CLOUD_KEY}` },
-  });
+  const cld = new Cloudinary({ cloud: { cloudName: "dalts7djg" } });
   const img = cld
     .image("profile-photo")
     .format("auto")
