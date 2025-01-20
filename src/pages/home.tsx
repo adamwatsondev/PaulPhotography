@@ -14,9 +14,7 @@ import { AdvancedImage } from "@cloudinary/react";
 import imagesArray from "@/data/imagesArray";
 
 export default function Home() {
-  const cld = new Cloudinary({
-    cloud: { cloudName: `${import.meta.env.VITE_CLOUDINARY_CLOUD_KEY}` },
-  });
+  const cld = new Cloudinary({ cloud: { cloudName: "dalts7djg" } });
 
   const imgs = imagesArray.map((image) =>
     cld
