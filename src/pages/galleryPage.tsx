@@ -10,7 +10,9 @@ import { AdvancedImage } from "@cloudinary/react";
 import galleryArray from "@/data/galleryArray";
 
 const GalleryPage = () => {
-  const cld = new Cloudinary({ cloud: { cloudName: "dalts7djg" } });
+  const cld = new Cloudinary({
+    cloud: { cloudName: import.meta.env.VITE_CLOUDINARY_CLOUD_KEY },
+  });
 
   // Filter images by the alt property matching the dynamic route parameter
   const { name } = useParams<{ name: string }>();

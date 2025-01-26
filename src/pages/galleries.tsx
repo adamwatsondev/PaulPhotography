@@ -8,7 +8,9 @@ import { fill } from "@cloudinary/url-gen/actions/resize";
 import { AdvancedImage } from "@cloudinary/react";
 
 export default function Galleries() {
-  const cld = new Cloudinary({ cloud: { cloudName: "dalts7djg" } });
+  const cld = new Cloudinary({
+    cloud: { cloudName: import.meta.env.VITE_CLOUDINARY_CLOUD_KEY },
+  });
 
   const imgs = imagesArray.map((image) =>
     cld
